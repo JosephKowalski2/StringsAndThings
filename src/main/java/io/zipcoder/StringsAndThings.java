@@ -18,6 +18,7 @@ public class StringsAndThings {
         int strLength = input.length();
         int countLetter = 0;
 
+        //Loops through string looking for y and z and checks if the char after those letters is a space or not before counting
         for (int i = 0; i < strLength; i++){
             if (input.charAt(i) == 'y' || input.charAt(i) == 'z'){
                 if (i < strLength - 1 && !Character.isLetter(input.charAt(i + 1))){
@@ -41,7 +42,7 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return base.replaceAll(remove, "");
+        return base.replaceAll(remove, ""); //Replaces what is in remove string with empty chars, deleting them
     }
 
     /**
@@ -76,6 +77,16 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+
+        int countTriples = 0;
+        int strLength = input.length();
+        //Loops through string
+        for (int i = 0; i < strLength - 1; i++){
+            //Compares char at i to the 2 char after it to see if they are the same. Increments countTriples if it is
+            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)){
+                countTriples++;
+            }
+        }
+        return countTriples;
     }
 }
