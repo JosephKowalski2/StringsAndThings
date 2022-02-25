@@ -65,7 +65,20 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+
+        int strLength = input.length();
+        boolean isGHappy = false;
+
+        for (int i = 0; i < strLength - 1; i++) {
+            //checks if the letter before each or after each letter is the same. Sets to true if it is and sets to false if isn't
+            if (input.charAt(i) == input.charAt(i + 1) || input.charAt(i) == input.charAt(i - 1)) {
+                isGHappy = true;
+            }
+            else {
+                isGHappy = false;
+            }
+        }
+        return isGHappy;
     }
 
 
