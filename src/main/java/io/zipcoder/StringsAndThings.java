@@ -1,6 +1,8 @@
 package io.zipcoder;
 
 
+import javax.swing.text.StyledEditorKit;
+
 /**
  * @author tariq
  */
@@ -54,7 +56,18 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
     public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+
+        Boolean resultCount;
+        String isCount = String.valueOf(input.split("in"));
+        String notCount = String.valueOf(input.split("not"));
+
+        if (isCount.length() == notCount.length()){
+            resultCount = true;
+        }
+        else {
+            resultCount = false;
+        }
+        return resultCount;
     }
 
     /**
