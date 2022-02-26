@@ -2,6 +2,7 @@ package io.zipcoder;
 
 
 import javax.swing.text.StyledEditorKit;
+import java.util.Arrays;
 
 /**
  * @author tariq
@@ -58,15 +59,10 @@ public class StringsAndThings {
     public Boolean containsEqualNumberOfIsAndNot(String input){
 
         Boolean resultCount;
-        String isCount = String.valueOf(input.split("in"));
-        String notCount = String.valueOf(input.split("not"));
+        int isCount = (input.split("is", -1).length);
+        int notCount = (input.split("not", -1).length);
 
-        if (isCount.length() == notCount.length()){
-            resultCount = true;
-        }
-        else {
-            resultCount = false;
-        }
+        resultCount = isCount == notCount;
         return resultCount;
     }
 
